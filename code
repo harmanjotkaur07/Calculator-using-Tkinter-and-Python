@@ -1,0 +1,59 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 30 12:45:44 2021
+
+@author: lenovo
+"""
+
+from tkinter import *
+L=[]
+def fxn():
+    i1=int(e1.get())
+    i2=int(e2.get())
+    op=e3.get()
+    if op=='-':
+        result=i1-i2
+        res.config(text=result)
+    elif op=='+':
+        result=i1+i2
+        res.config(text=result)
+    elif op=='x':
+        result=i1*i2
+        res.config(text=result)
+    elif op=='/':
+        result=i1/i2
+        res.config(text=result)
+    else:
+        res.config(text= 'Invalid Operation')
+
+root=Tk()
+root.geometry('300x400')
+
+l1=Label(root,text='Num1')
+l1.place(x=10,y=10)
+
+e1=Entry(root)
+e1.place(x=60,y=10)
+
+
+l2=Label(root,text='Num2')
+l2.place(x=10,y=40)
+
+e2=Entry(root)
+e2.place(x=60,y=40)
+
+l3=Label(root,text='Operator')
+l3.place(x=10,y=70)
+
+e3=Entry(root)
+e3.place(x=60,y=70)
+
+res=Label(root,font=('Ariel',15),fg='red')
+res.place(x=150,y=150)
+
+btn=Button(root,text='Submit',command=fxn)
+btn.place(x=200,y=200)
+
+
+
+root.mainloop()
